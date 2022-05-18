@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.via.api.model.enums.RouteType;
 
 import lombok.AllArgsConstructor;
@@ -45,6 +46,7 @@ public class SearchAirlineList {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Response {
 
         private List<CarrierListData> searchList;

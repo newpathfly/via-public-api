@@ -1,5 +1,6 @@
 package com.via.api.model;
 
+import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
@@ -46,6 +47,20 @@ public class SearchAirlineListTest {
         SearchAirlineList.Request actualRequest = OBJECT_MAPPER.readValue(json, SearchAirlineList.Request.class);
 
         assertEquals(expectedRequest.getSectorInfos(), actualRequest.getSectorInfos());
+    }
+
+    @Test
+    @SneakyThrows
+    void positiveTest_SearchAirlineListResponse() {
+        String samplePath = "/samples/SearchAirlineListResponse.json";
+
+        SearchAirlineList.Response response = null;
+
+        try (InputStream is = getClass().getResourceAsStream(samplePath)) {
+            response = OBJECT_MAPPER.readValue(is, SearchAirlineList.Response.class);
+        }
+
+        BASIC_REQUEST_VALIDATOR.validate(response);
     }
 
     private static void assertEquals(List<SectorInfo> expectedSectorInfoList, List<SectorInfo> actualSectorInfoList) {
