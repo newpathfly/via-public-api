@@ -1,8 +1,10 @@
 package com.via.api.model;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
 
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +28,8 @@ public class Airport {
 
     private String country;
 
-    private Calendar time;
+    @JsonFormat(pattern = "uuuu-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime time;
 
     private String terminal;
 }

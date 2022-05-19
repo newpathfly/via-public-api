@@ -1,10 +1,13 @@
 package com.via.api.model;
 
 import java.io.InputStream;
+import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.via.api.model.enums.RouteType;
 import com.via.api.utils.ModelValidator;
 
@@ -15,7 +18,9 @@ import lombok.SneakyThrows;
 
 class SearchAirlineListTest {
 
-    private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private final static ObjectMapper OBJECT_MAPPER = JsonMapper.builder()
+            .addModule(new JavaTimeModule())
+            .build();
 
     private final static ModelValidator BASIC_REQUEST_VALIDATOR = new ModelValidator();
 
@@ -127,7 +132,7 @@ class SearchAirlineListTest {
         return SectorInfo.builder()
                 .src(place1)
                 .dest(place2)
-                .date("2017-05-26")
+                .date(LocalDate.of(2022, 06, 28))
                 .build();
     }
 

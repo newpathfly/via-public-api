@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,6 +18,7 @@ import lombok.Singular;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Journey {
 
     @Valid
@@ -32,5 +35,5 @@ public class Journey {
     private Boolean allowBlocking;
 
     @Valid
-    private JourneyInfo journeyInfo;
+    private List<JourneyInfo> journeyInfo;
 }

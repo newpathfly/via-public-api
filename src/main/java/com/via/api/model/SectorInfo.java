@@ -1,8 +1,11 @@
 package com.via.api.model;
 
+import java.time.LocalDate;
+
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -25,6 +28,6 @@ public class SectorInfo {
     @Valid
     private Airport dest;
 
-    @Pattern(regexp = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")
-    private String date;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;
 }

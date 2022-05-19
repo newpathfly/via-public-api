@@ -1,9 +1,13 @@
 package com.via.api.model;
 
+import java.io.InputStream;
+import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.via.api.model.Search.Request;
 import com.via.api.model.enums.ClassType;
 import com.via.api.model.enums.RouteType;
@@ -15,7 +19,9 @@ import org.junit.jupiter.api.Test;
 import lombok.SneakyThrows;
 
 class SearchTest {
-    private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private final static ObjectMapper OBJECT_MAPPER = JsonMapper.builder()
+            .addModule(new JavaTimeModule())
+            .build();
 
     private final static ModelValidator BASIC_REQUEST_VALIDATOR = new ModelValidator();
 
@@ -47,6 +53,20 @@ class SearchTest {
         Search.Request actualRequest = OBJECT_MAPPER.readValue(json, Search.Request.class);
 
         assertEquals(expectedRequest, actualRequest);
+    }
+
+    @Test
+    @SneakyThrows
+    void positiveTest_SearchResponse() {
+        String samplePath = "/samples/SearchResponse.json";
+
+        Search.Response response = null;
+
+        try (InputStream is = getClass().getResourceAsStream(samplePath)) {
+            response = OBJECT_MAPPER.readValue(is, Search.Response.class);
+        }
+
+        BASIC_REQUEST_VALIDATOR.validate(response);
     }
 
     private void assertEquals(Request expected, Request actual) {
@@ -85,7 +105,7 @@ class SearchTest {
         return SectorInfo.builder()
                 .src(airport1)
                 .dest(airport2)
-                .date("2022-06-28")
+                .date(LocalDate.of(2022, 06, 28))
                 .build();
     }
 

@@ -18,5 +18,5 @@ public class ClassDetail {
     @JsonProperty("class")
     private String classType;
 
-    private String basic;
+    private String basis;
 }

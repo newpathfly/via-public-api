@@ -63,13 +63,13 @@ public class Search {
     public static class Response {
 
         @Valid
-        private Journey onwardJourneys;
+        private List<Journey> onwardJourneys;
 
         @Valid
-        private Journey returnJourneys;
+        private List<Journey> returnJourneys;
 
         @Valid
-        private Journey combinedJourneys;
+        private List<Journey> combinedJourneys;
 
         private Boolean hasCombinedJourneys;
 
