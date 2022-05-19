@@ -1,10 +1,9 @@
 package com.via.api.model.enums;
 
 public enum ClassType {
-    ECONOMY,
+    ALL,
     BUSINESS,
-    FIRST,
-    ALL
-
-    // @todo - add more
+    ECONOMY_FULL,
+    ECONOMY,
+    FIRST
 }

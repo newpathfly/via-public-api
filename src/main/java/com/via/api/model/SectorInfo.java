@@ -18,12 +18,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SectorInfo {
-    
-    @Valid
-    private Place src;
 
     @Valid
-    private Place dest;
+    private Airport src;
+
+    @Valid
+    private Airport dest;
 
     @Pattern(regexp = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")
     private String date;

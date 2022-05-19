@@ -1,6 +1,6 @@
 package com.via.api.model;
 
-import javax.validation.constraints.Size;
+import javax.validation.Valid;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,10 +13,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carrier {
+public class PaxWiseFareInformation {
 
-    @Size(min = 2, max = 2)
-    private String code;
+    @Valid
+    private FareInformation adt;
 
-    private String name;
+    @Valid
+    private FareInformation chd;
+
+    @Valid
+    private FareInformation inf;
 }

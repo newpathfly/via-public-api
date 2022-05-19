@@ -1,7 +1,5 @@
 package com.via.api.model;
 
-import javax.validation.constraints.Size;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,10 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carrier {
+public class JourneyInfo {
 
-    @Size(min = 2, max = 2)
-    private String code;
-
-    private String name;
+    private Long journeyTime;
 }

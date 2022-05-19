@@ -89,7 +89,7 @@ public class SearchAirlineListTest {
         Assertions.assertEquals(expectedSectorInfo.getDate(), actualSectorInfo.getDate());
     }
 
-    private static void assertEquals(Place expectedPlace, Place actualPlace) {
+    private static void assertEquals(Airport expectedPlace, Airport actualPlace) {
         Assertions.assertEquals(expectedPlace.getCode(), actualPlace.getCode());
         Assertions.assertEquals(expectedPlace.getName(), actualPlace.getName());
         Assertions.assertEquals(expectedPlace.getCity(), actualPlace.getCity());
@@ -109,8 +109,8 @@ public class SearchAirlineListTest {
     }
 
     private static SectorInfo buildSectorInfo() {
-        Place place1 = buildPlace("CGK");
-        Place place2 = buildPlace("SUB");
+        Airport place1 = buildPlace("CGK");
+        Airport place2 = buildPlace("SUB");
 
         return SectorInfo.builder()
                 .src(place1)
@@ -119,8 +119,8 @@ public class SearchAirlineListTest {
                 .build();
     }
 
-    private static Place buildPlace(String code) {
-        return Place.builder()
+    private static Airport buildPlace(String code) {
+        return Airport.builder()
                 .code(code)
                 .build();
     }

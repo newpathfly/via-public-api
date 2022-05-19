@@ -1,6 +1,6 @@
 package com.via.api.model;
 
-import javax.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,10 +13,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carrier {
+public class ClassDetail {
 
-    @Size(min = 2, max = 2)
-    private String code;
+    @JsonProperty("class")
+    private String classType;
 
-    private String name;
+    private String basic;
 }

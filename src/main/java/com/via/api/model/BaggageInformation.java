@@ -1,6 +1,6 @@
 package com.via.api.model;
 
-import javax.validation.constraints.Size;
+import com.via.api.model.enums.BaggageUnit;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,14 +13,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Place {
-    
-    @Size(min = 3, max = 3)
-    private String code;
+public class BaggageInformation {
 
-    private String name;
+    private String desc;
 
-    private String city;
+    private BaggageUnit unit;
 
-    private String country;
+    private Integer qty;
 }
