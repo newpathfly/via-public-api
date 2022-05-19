@@ -6,6 +6,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
+import com.via.api.model.Search;
 import com.via.api.model.SearchAirlineList;
 
 public class ModelValidator {
@@ -21,6 +22,14 @@ public class ModelValidator {
     }
 
     public void validate(SearchAirlineList.Response response) {
+        validateInternal(response);
+    }
+
+    public void validate(Search.Request request) {
+        validateInternal(request);
+    }
+
+    public void validate(Search.Response response) {
         validateInternal(response);
     }
 

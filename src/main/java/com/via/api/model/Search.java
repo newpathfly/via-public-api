@@ -48,6 +48,7 @@ public class Search {
         private ClassType classType;
 
         @Valid
+        @Singular
         private List<Carrier> prefAirlines;
 
         private Boolean multiCity;

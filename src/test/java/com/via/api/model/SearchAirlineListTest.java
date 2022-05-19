@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import lombok.SneakyThrows;
 
-public class SearchAirlineListTest {
+class SearchAirlineListTest {
 
     private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
@@ -46,7 +46,7 @@ public class SearchAirlineListTest {
 
         SearchAirlineList.Request actualRequest = OBJECT_MAPPER.readValue(json, SearchAirlineList.Request.class);
 
-        assertEquals(expectedRequest.getSectorInfos(), actualRequest.getSectorInfos());
+        assertEquals(expectedRequest, actualRequest);
     }
 
     @Test
@@ -63,12 +63,18 @@ public class SearchAirlineListTest {
         BASIC_REQUEST_VALIDATOR.validate(response);
     }
 
-    private static void assertEquals(List<SectorInfo> expectedSectorInfoList, List<SectorInfo> actualSectorInfoList) {
+    private static void assertEquals(SearchAirlineList.Request expected, SearchAirlineList.Request actual) {
+        assertEquals(expected.getSectorInfos(), actual.getSectorInfos());
+        assertEquals(expected.getPaxCount(), actual.getPaxCount());
+        Assertions.assertEquals(expected.getRoute(), actual.getRoute());
+    }
 
-        Assertions.assertEquals(expectedSectorInfoList.size(), actualSectorInfoList.size());
+    private static void assertEquals(List<SectorInfo> expected, List<SectorInfo> actual) {
 
-        Iterator<SectorInfo> expectedSectorInfoIterator = expectedSectorInfoList.iterator();
-        Iterator<SectorInfo> actualSectorInfoIterator = actualSectorInfoList.iterator();
+        Assertions.assertEquals(expected.size(), actual.size());
+
+        Iterator<SectorInfo> expectedSectorInfoIterator = expected.iterator();
+        Iterator<SectorInfo> actualSectorInfoIterator = actual.iterator();
 
         while (true) {
 
@@ -81,6 +87,12 @@ public class SearchAirlineListTest {
 
             assertEquals(expectedSectorInfo, actualSectorInfo);
         }
+    }
+
+    private static void assertEquals(PaxCount expected, PaxCount actual) {
+        Assertions.assertEquals(expected.getAdt(), actual.getAdt());
+        Assertions.assertEquals(expected.getChd(), actual.getChd());
+        Assertions.assertEquals(expected.getInf(), actual.getInf());
     }
 
     private static void assertEquals(SectorInfo expectedSectorInfo, SectorInfo actualSectorInfo) {
