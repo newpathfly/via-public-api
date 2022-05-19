@@ -3,7 +3,6 @@ package com.via.api.model;
 import java.time.LocalDate;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
