@@ -1,0 +1,249 @@
+{
+  "searchList": [
+    {
+      "carriers": [
+        {
+          "code": "GDS",
+          "name": "GDS"
+        }
+      ],
+      "allowDisc": false
+    },
+    {
+      "carriers": [
+        {
+          "code": "IT",
+          "name": "Tigerair Taiwan"
+        }
+      ],
+      "allowDisc": false
+    },
+    {
+      "carriers": [
+        {
+          "code": "3K",
+          "name": "Jetstar Asia"
+        }
+      ],
+      "allowDisc": false
+    },
+    {
+      "carriers": [
+        {
+          "code": "TZ",
+          "name": "Scoot Airline"
+        }
+      ],
+      "allowDisc": false
+    },
+    {
+      "carriers": [
+        {
+          "code": "AK",
+          "name": "AirAsia Airways"
+        }
+      ],
+      "allowDisc": false
+    },
+    {
+      "carriers": [
+        {
+          "code": "SL",
+          "name": "Thai Lion Air"
+        }
+      ],
+      "allowDisc": false
+    },
+    {
+      "carriers": [
+        {
+          "code": "6E",
+          "name": "IndiGo"
+        }
+      ],
+      "allowDisc": false
+    }
+  ],
+  "searchQuery": {
+    "sectorInfos": [
+      {
+        "src": {
+          "code": "CGK",
+          "name": "Soekarno Hatta Intl",
+          "country": "Indonesia",
+          "city": "Jakarta"
+        },
+        "dest": {
+          "code": "SUB",
+          "name": "Juanda Arpt",
+          "country": "Indonesia",
+          "city": "Surabaya"
+        },
+        "date": "2017-05-26",
+        "debug": false
+      }
+    ],
+    "class": "ALL",
+    "paxCount": {
+      "chd": 0,
+      "inf": 0,
+      "adt": 1
+    },
+    "route": "ALL",
+    "disc": false,
+    "multiHop": false,
+    "multiCity": false,
+    "senior": false,
+    "special": false,
+    "domestic": false,
+    "isOfflineSearch": false,
+    "isPaxWiseCommission": false,
+    "isComboAllowed": false,
+    "pwd": false,
+    "isIntlSearcherCombination": false
+  },
+  "id": 1754559617472411,
+  "webDta": {
+    "hdr": {
+      "priNavEl": [
+        {
+          "subEleLst": [
+            {
+              "dsplyNm": "Air Passenger Calendar",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=PAX_SCHEDULE",
+              "selected": false,
+              "tempNav": false
+            }
+          ],
+          "dsplyNm": "Flights",
+          "dsplyUrl": "http://testsgb2b.via.com/flight-tickets",
+          "selected": false,
+          "tempNav": false,
+          "navId": "flightProductNav"
+        },
+        {
+          "dsplyNm": "Hotels",
+          "dsplyUrl": "http://testsgb2b.via.com/hotels",
+          "selected": false,
+          "tempNav": false,
+          "navId": "hotelProductNav"
+        },
+        {
+          "subEleLst": [
+            {
+              "dsplyNm": "Bank Account Details",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=DEPOSIT_PROCESS",
+              "selected": false,
+              "tempNav": false
+            },
+            {
+              "dsplyNm": "Deposit Update Request",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=AGENT_DEP_FORM",
+              "selected": false,
+              "tempNav": false
+            },
+            {
+              "dsplyNm": "Accounting Reports",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=AGENT_TALLY_REPORT_ACTION",
+              "selected": false,
+              "tempNav": false
+            },
+            {
+              "dsplyNm": "Cancellations",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=CANCELLATIONS",
+              "selected": false,
+              "tempNav": false
+            },
+            {
+              "dsplyNm": "Refunds",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=REFUNDS",
+              "selected": false,
+              "tempNav": false
+            },
+            {
+              "dsplyNm": "Block Orders",
+              "dsplyUrl": "https://testsgb2b.via.com/agent?action1=AGENT_BLOCKED_ORDERS",
+              "selected": false,
+              "tempNav": false
+            }
+          ],
+          "dsplyNm": "Accounts",
+          "dsplyUrl": "https://testsgb2b.via.com/agent?action1=ACCOUNTS7856K",
+          "selected": false,
+          "tempNav": false
+        }
+      ],
+      "secNavEl": [
+        {
+          "dsplyNm": "DEALS",
+          "dsplyUrl": "http://testsgb2b.via.com/offers",
+          "selected": false,
+          "tempNav": false,
+          "navId": "dealSecondaryNav"
+        },
+        {
+          "dsplyNm": "Control Panel",
+          "dsplyUrl": "https://testsgb2b.via.com/agent?action1=CONTROL",
+          "selected": false,
+          "tempNav": false,
+          "navId": "controlPanelSecondaryNav"
+        },
+        {
+          "dsplyNm": "Email Us",
+          "dsplyUrl": "https://testsgb2b.via.com/agent?action1=CALL_REQUEST",
+          "selected": false,
+          "tempNav": false,
+          "navId": "emailUsSecondaryNav"
+        },
+        {
+          "dsplyNm": "BOOKING STATUS",
+          "dsplyUrl": "https://testsgb2b.via.com/agent?action1=",
+          "selected": false,
+          "tempNav": false,
+          "navId": "checkBookingStatus"
+        }
+      ],
+      "phNum": "@PHONE_NUM@",
+      "emlId": "sg.support@via.com",
+      "userSupportPhoneNum": "87654321",
+      "userSupportEmailId": "sandy.li@ticketcombine.com",
+      "ntData": {
+        "msgs": [
+          {
+            "msg": "Message1",
+            "genTime": "2015-10-12 02:08:49.430"
+          },
+          {
+            "msg": "Message1",
+            "genTime": "2015-10-12 02:08:33.317"
+          },
+          {
+            "msg": "Message1",
+            "genTime": "2015-10-12 02:08:26.049"
+          }
+        ],
+        "unreadmsg": 1,
+        "key": "Agent-Flow"
+      },
+      "isChatApplicable": true
+    },
+    "envDta": {
+      "domesticCountryId": "195",
+      "currentEnv": "sg",
+      "isB2CEnv": false,
+      "currencyCode": "SGD",
+      "currencySymbol": "S$",
+      "countryCode": "SG",
+      "countryName": "Singapore",
+      "userRole": "S",
+      "isMobile": false,
+      "languageSelected": "en"
+    }
+  },
+  "cndtns": {
+    "markupAppl": false,
+    "smsAppl": false,
+    "showNTA": false,
+    "showInc": false
+  }
+}
