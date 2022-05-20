@@ -5,7 +5,7 @@
 
     <groupId>com.newpathfly</groupId>
     <artifactId>via-public-api</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <name>via-public-api</name>
     <description>Java binding for via.com public API</description>
@@ -80,7 +80,6 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.13.3</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
