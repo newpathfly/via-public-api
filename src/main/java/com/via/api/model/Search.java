@@ -62,17 +62,34 @@ public class Search {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Response {
 
+        /**
+         * List of onward journeys
+         */
         @Valid
         private List<Journey> onwardJourneys;
 
+        /**
+         * List of return journeys
+         */
         @Valid
         private List<Journey> returnJourneys;
 
+        /**
+         * This will come if the search was International return or International
+         * multi-city or domestic multi-city more than 2 sectors or GDS discounted
+         * search
+         */
         @Valid
         private List<Journey> combinedJourneys;
 
+        /**
+         * True if its combined journey
+         */
         private Boolean hasCombinedJourneys;
 
+        /**
+         * True if its a domestic search
+         */
         private Boolean isDomestic;
     }
 }
