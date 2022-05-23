@@ -58,15 +58,19 @@ class SearchTest {
     @Test
     @SneakyThrows
     void positiveTest_SearchResponse() {
-        String samplePath = "/samples/SearchResponse.json";
 
-        Search.Response response = null;
+        for (String samplePath : new String[] {
+                "/samples/SearchResponse_OW.json",
+                "/samples/SearchResponse_RT.json",
+        }) {
+            Search.Response response = null;
 
-        try (InputStream is = getClass().getResourceAsStream(samplePath)) {
-            response = OBJECT_MAPPER.readValue(is, Search.Response.class);
+            try (InputStream is = getClass().getResourceAsStream(samplePath)) {
+                response = OBJECT_MAPPER.readValue(is, Search.Response.class);
+            }
+
+            BASIC_REQUEST_VALIDATOR.validate(response);
         }
-
-        BASIC_REQUEST_VALIDATOR.validate(response);
     }
 
     private void assertEquals(Request expected, Request actual) {
