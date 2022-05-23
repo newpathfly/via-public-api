@@ -1,5 +1,6 @@
 package com.via.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.via.api.model.enums.BaggageUnit;
 
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BaggageInformation {
 
     private String desc;

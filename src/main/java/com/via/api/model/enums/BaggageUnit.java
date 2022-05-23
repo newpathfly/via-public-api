@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum BaggageUnit {
     @JsonProperty("kg")
-    KG
+    KG,
 
-    // @todo
+    @JsonProperty("pc")
+    PC
 }

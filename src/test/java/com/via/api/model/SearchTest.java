@@ -63,7 +63,8 @@ class SearchTest {
 
         for (String samplePath : new String[] {
                 "/samples/SearchResponse_OW.json",
-                "/samples/SearchResponse_RT.json",
+                "/samples/SearchResponse_RT1.json",
+                "/samples/SearchResponse_RT2.json",
         }) {
             Search.Response response = null;
 
