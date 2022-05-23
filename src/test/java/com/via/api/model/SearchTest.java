@@ -50,6 +50,8 @@ class SearchTest {
 
         String json = OBJECT_MAPPER.writeValueAsString(expectedRequest);
 
+        Assertions.assertEquals(-1, json.indexOf("null"), json);
+
         Search.Request actualRequest = OBJECT_MAPPER.readValue(json, Search.Request.class);
 
         assertEquals(expectedRequest, actualRequest);
