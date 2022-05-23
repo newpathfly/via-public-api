@@ -50,6 +50,8 @@ class SearchTest {
 
         String json = OBJECT_MAPPER.writeValueAsString(expectedRequest);
 
+        Assertions.assertEquals(-1, json.indexOf("null"), json);
+
         Search.Request actualRequest = OBJECT_MAPPER.readValue(json, Search.Request.class);
 
         assertEquals(expectedRequest, actualRequest);
@@ -58,15 +60,20 @@ class SearchTest {
     @Test
     @SneakyThrows
     void positiveTest_SearchResponse() {
-        String samplePath = "/samples/SearchResponse.json";
 
-        Search.Response response = null;
+        for (String samplePath : new String[] {
+                "/samples/SearchResponse_OW.json",
+                "/samples/SearchResponse_RT1.json",
+                "/samples/SearchResponse_RT2.json",
+        }) {
+            Search.Response response = null;
 
-        try (InputStream is = getClass().getResourceAsStream(samplePath)) {
-            response = OBJECT_MAPPER.readValue(is, Search.Response.class);
+            try (InputStream is = getClass().getResourceAsStream(samplePath)) {
+                response = OBJECT_MAPPER.readValue(is, Search.Response.class);
+            }
+
+            BASIC_REQUEST_VALIDATOR.validate(response);
         }
-
-        BASIC_REQUEST_VALIDATOR.validate(response);
     }
 
     private void assertEquals(Request expected, Request actual) {
