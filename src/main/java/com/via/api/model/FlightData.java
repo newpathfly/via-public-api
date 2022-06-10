@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.via.api.model.enums.ClassType;
 import com.via.api.model.enums.EquipmentType;
 import com.via.api.model.enums.PaxType;
 
@@ -118,4 +119,6 @@ public class FlightData {
      * If it's a only hand baggage flight
      */
     private Boolean onlyHandbag;
+
+    private ClassType cabinClass;
 }
