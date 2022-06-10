@@ -93,5 +93,7 @@ public class Search {
          * True if its a domestic search
          */
         private Boolean isDomestic;
+
+        private WebDta webDta;
     }
 }
